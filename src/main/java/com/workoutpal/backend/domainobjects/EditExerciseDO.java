@@ -1,5 +1,6 @@
 package com.workoutpal.backend.domainobjects;
 
+
 public class EditExerciseDO {
     String username;
     String dayName;

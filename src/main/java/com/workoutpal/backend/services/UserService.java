@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class UserService {
@@ -46,6 +47,7 @@ public class UserService {
     }
 
     public ResponseEntity<String> register(LoginDO loginDO) {
+
         Query query = new Query();
         query.addCriteria(Criteria.where("username").is(loginDO.getUsername()));
         User user =  template.findOne(query, User.class);

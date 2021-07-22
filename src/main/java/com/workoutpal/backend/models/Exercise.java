@@ -10,6 +10,9 @@ import io.github.kaiso.relmongo.annotation.OneToMany;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Document(collection = "exercises")
 public class Exercise {
 
