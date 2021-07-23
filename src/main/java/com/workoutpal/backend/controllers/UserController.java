@@ -2,6 +2,7 @@ package com.workoutpal.backend.controllers;
 import com.workoutpal.backend.domainobjects.*;
 import com.workoutpal.backend.models.User;
 import com.workoutpal.backend.services.UserService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,11 @@ public class UserController {
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
+    }
+
+    @GetMapping(path = "/ping")
+    public ResponseEntity<String> ping() {
+        return new ResponseEntity<String>(HttpStatus.OK);
     }
 
     @PostMapping(path = "/register", produces = "application/json")
